@@ -1,0 +1,42 @@
+{
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "5.12.1",
+    "axios": "^0.18.0",
+    "chart.js": "^2.9.3",
+    "classnames": "^2.2.6",
+    "jwt-decode": "^2.2.0",
+    "node-sass": "^4.14.1",
+    "primeicons": "^3.0.0-rc.1",
+    "primereact": "^4.2.1",
+    "react": "^16.6.3",
+    "react-chartjs-2": "^2.9.0",
+    "react-dom": "^16.6.3",
+    "react-redux": "^5.1.1",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "2.1.1",
+    "react-transition-group": "^2.5.1",
+    "reactstrap": "8.4.1",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0",
+    "lodash.findindex": "^4.6.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "proxy": "http://localhost:5000",
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
