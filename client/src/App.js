@@ -77,7 +77,7 @@ class App extends Component {
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/product/all" component={ AllProductsClient }/>
-              <Route exact path="/product/single" component={ singleProduct }/>
+              <Route exact path="/product/single/:id" component={ singleProduct }/>
               {/*<Redirect from="/" to="/admin/index" />*/}
           </div>
         </Router>

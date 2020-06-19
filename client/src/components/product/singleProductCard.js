@@ -1,7 +1,7 @@
 import React , {Component} from "react";
 
 import PropTypes from "prop-types";
-
+import singleProduct from "../../pages/public/product/singleProduct";
 
 // reactstrap components
 import {
@@ -30,7 +30,8 @@ class singleProductCard extends Component {
             error: null,
             isLoaded: false,
             products: [],
-            cartProducts: []
+            cartProducts: [],
+            product: null
 
         };
         this.state.products = props.products
@@ -158,7 +159,9 @@ class singleProductCard extends Component {
                                    top
                                />
                                <CardBody>
-                                   <CardTitle className="text-center font-weight-bold">{this.state.products.productName}</CardTitle>
+                                   <Link href="" to={`/product/single/${this.state.products._id}`}>
+                                       <CardTitle className="text-center font-weight-bold">{this.state.products.productName}</CardTitle>
+                                   </Link>
                                    <CardText className="text-center">LKR {this.state.products.productPrice}</CardText>
                                    <CardText className="text-center"><label className="font-weight-bold">Colors :</label>{this.state.products.productColor}</CardText>
 
@@ -207,11 +210,6 @@ class singleProductCard extends Component {
                                    }
                                </CardBody>
                            </Card>
-
-
-
-
-
             </>
         );
     }
