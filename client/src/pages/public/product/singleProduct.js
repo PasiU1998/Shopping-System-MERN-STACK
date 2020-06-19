@@ -24,7 +24,7 @@ class singleProduct extends Component {
             product_id: props.match.params.id,
             product: null,
             reviews: [],
-            avg_rating: null,
+            avg_rating: 0,
             cartProducts: [],
             review_stars: [1, 2, 3, 4, 5],
             rating: "",
@@ -165,7 +165,7 @@ class singleProduct extends Component {
                 />
                 <div className="container-fluid mt-5 pt-5" style={{backgroundColor:"#f0f0f0", minHeight:"80vh"}}>
                     {
-                        (this.state.product && this.state.avg_rating) ? (
+                        (this.state.product) ? (
                             <div className="row justify-content-center mt-5 pt-5">
                                 <div className="col-md-8">
                                     <div className="row">
@@ -220,7 +220,7 @@ class singleProduct extends Component {
                     }
 
                     {
-                        (this.state.reviews && this.state.avg_rating) ? (
+                        (this.state.reviews) ? (
                             <div className="row justify-content-center mt-5">
                                 <div className="col-md-8">
                                     <h2>Reviews</h2>
