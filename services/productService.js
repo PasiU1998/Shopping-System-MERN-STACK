@@ -72,7 +72,7 @@ const updateProduct = (id, body , res) =>{
 
         if(err.kind === 'ObjectId') {
             return res.status(404).send({
-                message: "Product  not found with id " + id
+                message: "Product  cant found with id " + id
             });
         }
         return res.status(500).send({

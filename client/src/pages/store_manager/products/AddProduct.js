@@ -29,6 +29,7 @@ class AddProduct extends Component{
             error: null,
             isLoaded: false,
             category: [],
+            products : [],
 
             productName : "" ,
             productDescription :"",
@@ -37,7 +38,7 @@ class AddProduct extends Component{
             productDiscount : "",
             productColor : "",
             productAvailableSize: "",
-            productImg : "",
+            productImg : null,
             categoryId : ""
 
         };
@@ -68,7 +69,14 @@ class AddProduct extends Component{
     }
 
     onChange = e => {
-        this.setState({ [e.target.id]: e.target.value });
+
+        if(e.target.type === "text" || e.target.type === "number" ){
+            this.setState({ [e.target.id]: e.target.value });
+        }
+        else{
+            this.setState({ [e.target.id]: e.target.files[0] });
+        }
+
     };
 
     handleDropdownChange(e) {
@@ -83,21 +91,28 @@ class AddProduct extends Component{
 
     addNewProduct = (e) => {
         e.preventDefault();
-        const newProduct = {
-            productName: this.state.productName,
-            productDescription: this.state.productDescription,
-            productPrice: this.state.productPrice,
-            productStockQuantity: this.state.productStockQuantity,
-            productDiscount: this.state.productDiscount,
-            productColor : this.state.productColor,
-            productAvailableSize : this.state.productAvailableSize,
-            productImg : this.state.productImg,
-            category_id : this.state.categoryId,
-            user_id :this.props.auth.user.id
-        };
 
+        const formData = new FormData();
+
+        formData.append('productName', this.state.productName);
+        formData.append('productDescription', this.state.productDescription);
+        formData.append('productPrice', this.state.productPrice);
+        formData.append('productStockQuantity', this.state.productStockQuantity);
+        formData.append('productDiscount', this.state.productDiscount);
+        formData.append('productColor', this.state.productColor);
+        formData.append('productAvailableSize', this.state.productAvailableSize);
+        formData.append('productImg', this.state.productImg);
+        formData.append('category_id', this.state.categoryId);
+        formData.append('user_id', this.props.auth.user.id);
+
+        console.log(formData)
+        const config = {
+            headers: {
+                'content-type': 'multipart/form-data'
+            }
+        };
         axios
-            .post("/api/products/insert", newProduct)
+            .post("/api/products/insert", formData , config)
             .then(res => {
 
                 this.setState({
@@ -117,7 +132,7 @@ class AddProduct extends Component{
                     console.log(this.state.errors1)
                 }
             );
-            console.log(newProduct)
+
     };
 
 
@@ -132,7 +147,7 @@ render() {
                     <div className="text-center text-muted mb-4">
                         <h1 className="font-weight-bold">Add New Product</h1>
                     </div>
-                    <Form role="form">
+                    <Form encType="multipart/form-data" role="form"  >
                         <FormGroup className="mb-3">
                             <label htmlFor="sel1">Select Category : </label>
                             <select className="form-control" id="sel1"
@@ -276,14 +291,27 @@ render() {
                                             <span className="text-red">{}</span>
                                         </FormGroup>
 
+                        {/*<FormGroup className="mb-3">*/}
+
+                        {/*    <div className="input-group">*/}
+                        {/*        <div className="input-group-prepend">*/}
+                        {/*            <span className="input-group-text" id="inputGroupFileAddon01">Upload</span>*/}
+                        {/*        </div>*/}
+                        {/*        <div className="custom-file">*/}
+                        {/*            <input type="file" accept="image/*"  name= "file"  className="form-control-file" id="inputGroupFile01"*/}
+                        {/*                   aria-describedby="inputGroupFileAddon01"/>*/}
+                        {/*                <label className="custom-file-label" htmlFor="inputGroupFile01">Choose*/}
+                        {/*                    file</label>*/}
+                        {/*        </div>*/}
+                        {/*    </div>*/}
+
+                        {/*</FormGroup>*/}
+
                         <FormGroup className="mb-3">
                             <div className="custom-file">
-                                <input type="file"
-                                       className="custom-file-input"
-                                       id="productImg"
-                                       onChange={this.onChange}
-                                       value={this.state.productImg}/>
-                                    <label className="custom-file-label" htmlFor="customFile">Upload Image</label>
+                                <label className="mb-5" htmlFor="productImg">Upload Image</label>
+                                <input id="productImg" type="file" className="form-control-file" name="file" accept="image/*" files={this.state.productImg} onChange= {this.onChange} />
+
                             </div>
                          </FormGroup>
 
