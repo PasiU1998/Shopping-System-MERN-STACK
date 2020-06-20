@@ -49,8 +49,8 @@ class ProductAll extends Component{
             productDiscount : "",
             productColor : "",
             productAvailableSize: "",
-            category_id : "",
-            productImg : ""
+            categoryId : "",
+            productImg : null
 
         };
         console.log(this.props.auth.user.id)
@@ -92,32 +92,45 @@ class ProductAll extends Component{
             productDiscount : product ? product.productDiscount: "",
             productColor : product ? product.productColor: "",
             productAvailableSize : product ? product.productAvailableSize : "",
+            categoryId : product ? product.category_id : "",
             productImg : product ? product.productImg : ""
 
         });
     };
 
     onChange = e => {
-        this.setState({ [e.target.id]: e.target.value });
+        if(e.target.type === "text" || e.target.type === "number" ){
+            this.setState({ [e.target.id]: e.target.value });
+        }
+        else{
+            this.setState({ [e.target.id]: e.target.files[0] });
+        }
     };
 
-    editProduct = (e) => {
-        e.preventDefault();
-        const updateProduct = {
-            productName: this.state.productName,
-            productDescription: this.state.productDescription,
-            productPrice: this.state.productPrice,
-            productStockQuantity: this.state.productStockQuantity,
-            productDiscount: this.state.productDiscount,
-            productColor : this.state.productColor,
-            productAvailableSize : this.state.productAvailableSize,
-            productImg : this.state.productImg,
-            category_id : this.state.products.category_id,
-            user_id :this.props.auth.user.id
-        };
+    editProduct = (id) => {
 
+        const formData = new FormData();
+
+        formData.append('productName', this.state.productName);
+        formData.append('productDescription', this.state.productDescription);
+        formData.append('productPrice', this.state.productPrice);
+        formData.append('productStockQuantity', this.state.productStockQuantity);
+        formData.append('productDiscount', this.state.productDiscount);
+        formData.append('productColor', this.state.productColor);
+        formData.append('productAvailableSize', this.state.productAvailableSize);
+        formData.append('productImg', this.state.productImg);
+        formData.append('category_id', this.state.categoryId);
+        formData.append('user_id', this.props.auth.user.id);
+
+        const config = {
+            headers: {
+                'content-type': 'multipart/form-data'
+            }
+        };
+        console.log(this.props.auth.user.id)
+        console.log(id)
         axios
-            .post("/api/products/update/" + this.props.auth.user.id , updateProduct)
+            .put("/api/products/update/" + id , formData, config )
             .then(res => {
 
                 this.setState({
@@ -137,7 +150,7 @@ class ProductAll extends Component{
                     console.log(this.state.errors1)
                 }
             );
-        console.log(updateProduct)
+
     };
 
     deleteproduct = (id) =>{
@@ -161,7 +174,7 @@ class ProductAll extends Component{
 
     render(){
 
-        let src = "http://localhost:5000/uploads/"
+        let src = "http://localhost:3000/uploads/"
          return (
             <>
                 <StoreManagerHeader/>
@@ -301,7 +314,7 @@ class ProductAll extends Component{
                                 <div className="text-center text-muted mb-4">
                                     <h3 className="font-weight-bold">Update Product ({this.state.productName})</h3>
                                 </div>
-                                <Form role="form">
+                                <Form role="form"  encType="multipart/form-data">
 
                                     <FormGroup className="mb-3">
                                         <InputGroup className="input-group-alternative">
@@ -430,14 +443,22 @@ class ProductAll extends Component{
                                         <span className="text-red">{}</span>
                                     </FormGroup>
 
+                                    {/*<FormGroup className="mb-3">*/}
+                                    {/*    <div className="custom-file">*/}
+                                    {/*        <input type="file"*/}
+                                    {/*               className="custom-file-input"*/}
+                                    {/*               id="productImg"*/}
+                                    {/*               onChange={this.onChange}*/}
+                                    {/*               value={this.state.productImage}/>*/}
+                                    {/*        <label className="custom-file-label" htmlFor="customFile">Upload Image</label>*/}
+                                    {/*    </div>*/}
+                                    {/*</FormGroup>*/}
+
                                     <FormGroup className="mb-3">
                                         <div className="custom-file">
-                                            <input type="file"
-                                                   className="custom-file-input"
-                                                   id="productImg"
-                                                   onChange={this.onChange}
-                                                   value={this.state.productImage}/>
-                                            <label className="custom-file-label" htmlFor="customFile">Upload Image</label>
+                                            <label className="mb-5" htmlFor="productImg">Upload Image</label>
+                                            <input id="productImg" type="file" className="form-control-file" name="file" accept="image/*" files={this.state.productImg} onChange= {this.onChange} />
+
                                         </div>
                                     </FormGroup>
 
@@ -448,7 +469,7 @@ class ProductAll extends Component{
                                             color="primary"
                                             type="button"
                                             data-dismiss="modal"
-                                            onClick={(e) => this.editProduct(e)}
+                                            onClick={(e) => this.editProduct(this.state.product_id)}
                                         >
                                             Update Product
                                         </Button>
