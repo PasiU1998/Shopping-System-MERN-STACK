@@ -229,11 +229,10 @@ class UserCart extends Component{
                                         (Object.keys(this.props.cart.cart).length != 0 && this.props.cart.cart.constructor === Object) ? (
 
                                             this.state.cartProducts.map((value, index) => {
-                                                const image = 'http://localhost:5000/uploads/'+value.productImage;
                                                 return (
                                                     <tr key={index}>
                                                         <td>
-                                                            <img src={image} style={{ display: 'inline-block', margin: '2px 0 2px 2px',width:60 }} />
+                                                            <img src={require("../../../assets/uploads/" + value.productImage)} style={{ display: 'inline-block', margin: '2px 0 2px 2px',width:60 }} />
                                                         </td>
 
                                                         <td>

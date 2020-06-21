@@ -48,7 +48,7 @@ class Landing extends Component{
                             <Card className="p-5">
                                 <CardImg
                                     alt="..."
-                                    src="http://localhost:5000/uploads/productImg-1589998617467.jpg"
+                                    src= {require("../../../assets/uploads/productImg-1589998617467.jpg")}
                                     top
                                     height="100%"
                                 />
@@ -63,7 +63,7 @@ class Landing extends Component{
                             <Card className="p-5">
                                 <CardImg
                                     alt="..."
-                                    src="http://localhost:5000/uploads/productImg-1589998848046.jpg"
+                                    src= {require("../../../assets/uploads/productImg-1589998848046.jpg")}
                                     top
                                     height="100%"
                                 />
@@ -78,7 +78,7 @@ class Landing extends Component{
                             <Card className="p-5">
                                 <CardImg
                                     alt="..."
-                                    src="http://localhost:5000/uploads/productImg-1590328089642.jpg"
+                                    src={require("../../../assets/uploads/productImg-1589999698057.jpg")}
                                     top
                                     height="100%"
                                 />

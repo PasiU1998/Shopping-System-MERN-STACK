@@ -50,7 +50,18 @@ class ProductAll extends Component{
             productColor : "",
             productAvailableSize: "",
             categoryId : "",
-            productImg : null
+            productImg : null,
+
+
+
+            changeproductName : "" ,
+            changeproductDescription :"",
+            changeproductPrice : "",
+            changeproductStockQuantity : "",
+            changeproductDiscount : "",
+            changeproductColor : "",
+            changeproductAvailableSize: "",
+            changeproductImg : null
 
         };
         console.log(this.props.auth.user.id)
@@ -77,6 +88,10 @@ class ProductAll extends Component{
 
     }
 
+
+
+
+
     componentWillUnmount() {
         this._isMounted = false;
     }
@@ -86,14 +101,15 @@ class ProductAll extends Component{
             [state]: !this.state[state],
             product_id : product ? product._id : "",
             productName : product ? product.productName : "",
-            productDescription: product ? product.productDescription:"",
-            productPrice: product ? product.productPrice : "",
-            productStockQuantity: product ? product.productStockQuantity : "",
-            productDiscount : product ? product.productDiscount: "",
-            productColor : product ? product.productColor: "",
-            productAvailableSize : product ? product.productAvailableSize : "",
+            changeproductName : product ? product.productName : "",
+            changeproductDescription: product ? product.productDescription:"",
+            changeproductPrice: product ? product.productPrice : "",
+            changeproductStockQuantity: product ? product.productStockQuantity : "",
+            changeproductDiscount : product ? product.productDiscount: "",
+            changeproductColor : product ? product.productColor: "",
+            changeproductAvailableSize : product ? product.productAvailableSize : "",
             categoryId : product ? product.category_id : "",
-            productImg : product ? product.productImg : ""
+            changeproductImg : product ? product.productImg : ""
 
         });
     };
@@ -111,14 +127,14 @@ class ProductAll extends Component{
 
         const formData = new FormData();
 
-        formData.append('productName', this.state.productName);
-        formData.append('productDescription', this.state.productDescription);
-        formData.append('productPrice', this.state.productPrice);
-        formData.append('productStockQuantity', this.state.productStockQuantity);
-        formData.append('productDiscount', this.state.productDiscount);
-        formData.append('productColor', this.state.productColor);
-        formData.append('productAvailableSize', this.state.productAvailableSize);
-        formData.append('productImg', this.state.productImg);
+        formData.append('productName', this.state.changeproductName);
+        formData.append('productDescription', this.state.changeproductDescription);
+        formData.append('productPrice', this.state.changeproductPrice);
+        formData.append('productStockQuantity', this.state.changeproductStockQuantity);
+        formData.append('productDiscount', this.state.changeproductDiscount);
+        formData.append('productColor', this.state.changeproductColor);
+        formData.append('productAvailableSize', this.state.changeproductAvailableSize);
+        formData.append('productImg', this.state.changeproductImg);
         formData.append('category_id', this.state.categoryId);
         formData.append('user_id', this.props.auth.user.id);
 
@@ -133,6 +149,14 @@ class ProductAll extends Component{
             .put("/api/products/update/" + id , formData, config )
             .then(res => {
 
+                let products = this.state.products;
+                let productIndex = _findIndex(this.state.products, {id: id});
+
+                products.splice(productIndex, 1);
+                this.setState({
+                    products : products,
+                });
+
                 this.setState({
                     products: [
                         ...this.state.products,
@@ -140,8 +164,9 @@ class ProductAll extends Component{
                     ]
                 });
                 console.log(res.data)
-
+                this.toggleModal("updateProduct", null)
             })
+
             .catch(err =>{
                     console.log(err.response.data);
                     this.setState({
@@ -150,6 +175,7 @@ class ProductAll extends Component{
                     console.log(this.state.errors1)
                 }
             );
+
 
     };
 
@@ -174,7 +200,7 @@ class ProductAll extends Component{
 
     render(){
 
-        let src = "http://localhost:3000/uploads/"
+
          return (
             <>
                 <StoreManagerHeader/>
@@ -211,7 +237,7 @@ class ProductAll extends Component{
                                                             <a  className="avatar rounded-circle mr-3" >
                                                                 <img
                                                                     alt="..."
-                                                                    src ={ src + value.productImage }
+                                                                    src ={ require("../../../assets/uploads/" + value.productImage)}
                                                                 />
                                                             </a>
                                                             <Media>
@@ -325,8 +351,8 @@ class ProductAll extends Component{
                                             </InputGroupAddon>
                                             <Input placeholder="Product Name"
                                                    onChange={this.onChange}
-                                                   value={this.state.productName}
-                                                   id="productName"
+                                                   value={this.state.changeproductName}
+                                                   id="changeproductName"
                                                    type="text"
                                             />
 
@@ -344,8 +370,8 @@ class ProductAll extends Component{
                                             </InputGroupAddon>
                                             <Input placeholder="Description of Product"
                                                    onChange={this.onChange}
-                                                   value={this.state.productDescription}
-                                                   id="productDescription"
+                                                   value={this.state.changeproductDescription}
+                                                   id="changeproductDescription"
                                                    type="text"
                                             />
 
@@ -362,8 +388,8 @@ class ProductAll extends Component{
                                             </InputGroupAddon>
                                             <Input placeholder="Unit Price"
                                                    onChange={this.onChange}
-                                                   value={this.state.productPrice}
-                                                   id="productPrice"
+                                                   value={this.state.changeproductPrice}
+                                                   id="changeproductPrice"
                                                    type="number"
                                             />
 
@@ -380,8 +406,8 @@ class ProductAll extends Component{
                                             </InputGroupAddon>
                                             <Input placeholder="Stock Quantity"
                                                    onChange={this.onChange}
-                                                   value={this.state.productStockQuantity}
-                                                   id="productStockQuantity"
+                                                   value={this.state.changeproductStockQuantity}
+                                                   id="changeproductStockQuantity"
                                                    type="number"
                                             />
 
@@ -398,8 +424,8 @@ class ProductAll extends Component{
                                             </InputGroupAddon>
                                             <Input placeholder="Discount"
                                                    onChange={this.onChange}
-                                                   value={this.state.productDiscount}
-                                                   id="productDiscount"
+                                                   value={this.state.changeproductDiscount}
+                                                   id="changeproductDiscount"
                                                    type="number"
                                             />
 
@@ -416,8 +442,8 @@ class ProductAll extends Component{
                                             </InputGroupAddon>
                                             <Input placeholder="Available Colors"
                                                    onChange={this.onChange}
-                                                   value={this.state.productColor}
-                                                   id="productColor"
+                                                   value={this.state.changeproductColor}
+                                                   id="changeproductColor"
                                                    type="text"
                                             />
 
@@ -434,8 +460,8 @@ class ProductAll extends Component{
                                             </InputGroupAddon>
                                             <Input placeholder="Available SIZE"
                                                    onChange={this.onChange}
-                                                   value={this.state.productAvailableSize}
-                                                   id="productAvailableSize"
+                                                   value={this.state.changeproductAvailableSize}
+                                                   id="changeproductAvailableSize"
                                                    type="text"
                                             />
 
@@ -457,7 +483,7 @@ class ProductAll extends Component{
                                     <FormGroup className="mb-3">
                                         <div className="custom-file">
                                             <label className="mb-5" htmlFor="productImg">Upload Image</label>
-                                            <input id="productImg" type="file" className="form-control-file" name="file" accept="image/*" files={this.state.productImg} onChange= {this.onChange} />
+                                            <input id="changeproductImg" type="file" className="form-control-file" name="file" accept="image/*" files={this.state.changeproductImg} onChange= {this.onChange} />
 
                                         </div>
                                     </FormGroup>
