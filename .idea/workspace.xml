@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5cc49b0f-8f1c-4b02-8d9a-c39abd42c8b3" name="Default Changelist" comment="Adding icons to delete and update password">
+    <list default="true" id="5cc49b0f-8f1c-4b02-8d9a-c39abd42c8b3" name="Default Changelist" comment="New Modification">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/admin/storeManagers/AllStoreManagers.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/admin/storeManagers/AllStoreManagers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/admin/users/AllUsers.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/admin/users/AllUsers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/public/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/public/Login.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,10 +20,16 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dev" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
   </component>
   <component name="ProjectId" id="1axPc1mcokYn6gZCfahlhXC6HPL" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -39,11 +43,12 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/validation" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/client/src/assets/css" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Online Shoping System Modification\client\src\assets\css" />
       <recent name="E:\online-shoping-system\validation" />
     </key>
   </component>
@@ -64,6 +69,12 @@
       <workItem from="1588351876035" duration="3441000" />
       <workItem from="1589150769510" duration="73037000" />
       <workItem from="1589458082321" duration="18495000" />
+      <workItem from="1591298124965" duration="1063000" />
+      <workItem from="1591586677224" duration="2645000" />
+      <workItem from="1592626463146" duration="40562000" />
+      <workItem from="1592705325173" duration="6338000" />
+      <workItem from="1592712797283" duration="8534000" />
+      <workItem from="1592724982457" duration="3259000" />
     </task>
     <task id="LOCAL-00001" summary="Changing the structure">
       <created>1588355467681</created>
@@ -93,7 +104,28 @@
       <option name="project" value="LOCAL" />
       <updated>1590272243284</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="New Modification">
+      <created>1592675714887</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1592675714887</updated>
+    </task>
+    <task id="LOCAL-00006" summary="New Modification 2020.06.21">
+      <created>1592710909031</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1592710909031</updated>
+    </task>
+    <task id="LOCAL-00007" summary="New Modification Pasindu">
+      <created>1592728970748</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1592728970748</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -117,46 +149,49 @@
     <MESSAGE value="product view and insert" />
     <MESSAGE value="Finilize UI in admin" />
     <MESSAGE value="Finalizig the UI for Dashboards." />
-    <option name="LAST_COMMIT_MESSAGE" value="Finalizig the UI for Dashboards." />
+    <MESSAGE value="New Modification" />
+    <MESSAGE value="New Modification 2020.06.21" />
+    <MESSAGE value="New Modification Pasindu" />
+    <option name="LAST_COMMIT_MESSAGE" value="New Modification Pasindu" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="70" key="#Deployment" timestamp="1588355403400">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="70" key="#Deployment/0.0.1536.824/1920.0.1024.728@0.0.1536.824" timestamp="1588355403400" />
-    <state x="585" y="235" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1589382316071">
+    <state x="585" y="235" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1592702414059">
       <screen x="107" y="0" width="1429" height="864" />
     </state>
-    <state x="585" y="235" key="#com.intellij.fileTypes.FileTypeChooser/107.0.1429.864@107.0.1429.864" timestamp="1589382316071" />
-    <state x="393" y="6" key="CommitChangelistDialog2" timestamp="1590273662924">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="585" y="235" key="#com.intellij.fileTypes.FileTypeChooser/107.0.1429.864@107.0.1429.864" timestamp="1592702414059" />
+    <state x="473" y="6" key="CommitChangelistDialog2" timestamp="1592728969719">
+      <screen x="107" y="0" width="1429" height="864" />
     </state>
     <state x="393" y="6" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1024.728@0.0.1536.824" timestamp="1590273662924" />
-    <state x="473" y="6" key="CommitChangelistDialog2/107.0.1429.864@107.0.1429.864" timestamp="1589455086892" />
-    <state x="243" y="69" key="DiffContextDialog" timestamp="1589454794590">
+    <state x="473" y="6" key="CommitChangelistDialog2/107.0.1429.864@107.0.1429.864" timestamp="1592728969719" />
+    <state x="243" y="69" width="1247" height="726" key="DiffContextDialog" timestamp="1592728893985">
       <screen x="107" y="0" width="1429" height="864" />
     </state>
-    <state x="243" y="69" key="DiffContextDialog/107.0.1429.864@107.0.1429.864" timestamp="1589454794590" />
-    <state width="1515" height="246" key="GridCell.Tab.0.bottom" timestamp="1590188726627">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="243" y="69" width="1247" height="726" key="DiffContextDialog/107.0.1429.864@107.0.1429.864" timestamp="1592728893985" />
+    <state width="1408" height="224" key="GridCell.Tab.0.bottom" timestamp="1591300667968">
+      <screen x="107" y="0" width="1429" height="864" />
     </state>
     <state width="1515" height="246" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1024.728@0.0.1536.824" timestamp="1590188726627" />
-    <state width="1408" height="224" key="GridCell.Tab.0.bottom/107.0.1429.864@107.0.1429.864" timestamp="1589457993430" />
-    <state width="1515" height="246" key="GridCell.Tab.0.center" timestamp="1590188726627">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1408" height="224" key="GridCell.Tab.0.bottom/107.0.1429.864@107.0.1429.864" timestamp="1591300667968" />
+    <state width="1408" height="224" key="GridCell.Tab.0.center" timestamp="1591300667968">
+      <screen x="107" y="0" width="1429" height="864" />
     </state>
     <state width="1515" height="246" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1024.728@0.0.1536.824" timestamp="1590188726627" />
-    <state width="1408" height="224" key="GridCell.Tab.0.center/107.0.1429.864@107.0.1429.864" timestamp="1589457993430" />
-    <state width="1515" height="246" key="GridCell.Tab.0.left" timestamp="1590188726627">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1408" height="224" key="GridCell.Tab.0.center/107.0.1429.864@107.0.1429.864" timestamp="1591300667968" />
+    <state width="1408" height="224" key="GridCell.Tab.0.left" timestamp="1591300667968">
+      <screen x="107" y="0" width="1429" height="864" />
     </state>
     <state width="1515" height="246" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1024.728@0.0.1536.824" timestamp="1590188726627" />
-    <state width="1408" height="224" key="GridCell.Tab.0.left/107.0.1429.864@107.0.1429.864" timestamp="1589457993430" />
-    <state width="1515" height="246" key="GridCell.Tab.0.right" timestamp="1590188726627">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1408" height="224" key="GridCell.Tab.0.left/107.0.1429.864@107.0.1429.864" timestamp="1591300667968" />
+    <state width="1408" height="224" key="GridCell.Tab.0.right" timestamp="1591300667968">
+      <screen x="107" y="0" width="1429" height="864" />
     </state>
     <state width="1515" height="246" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1024.728@0.0.1536.824" timestamp="1590188726627" />
-    <state width="1408" height="224" key="GridCell.Tab.0.right/107.0.1429.864@107.0.1429.864" timestamp="1589457993430" />
+    <state width="1408" height="224" key="GridCell.Tab.0.right/107.0.1429.864@107.0.1429.864" timestamp="1591300667968" />
     <state x="146" y="66" key="MergeDialog" timestamp="1590258671172">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -171,28 +206,41 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="ShowDiffWithBranchDialog/0.0.1536.824@0.0.1536.824" timestamp="1587752208428" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1590259615862">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="443" y="152" key="Vcs.Push.Dialog.v2" timestamp="1592728990114">
+      <screen x="107" y="0" width="1429" height="864" />
     </state>
     <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1024.728@0.0.1536.824" timestamp="1590259615862" />
     <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1587752795416" />
+    <state x="443" y="152" key="Vcs.Push.Dialog.v2/107.0.1429.864@107.0.1429.864" timestamp="1592728990114" />
     <state x="398" y="109" width="740" height="606" key="find.popup" timestamp="1590265035253">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="398" y="109" width="740" height="606" key="find.popup/0.0.1536.824/1920.0.1024.728@0.0.1536.824" timestamp="1590265035253" />
-    <state x="454" y="214" key="git4idea.merge.GitPullDialog" timestamp="1590272260725">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="529" y="224" key="git4idea.merge.GitPullDialog" timestamp="1592676155560">
+      <screen x="107" y="0" width="1429" height="864" />
     </state>
     <state x="454" y="214" key="git4idea.merge.GitPullDialog/0.0.1536.824/1920.0.1024.728@0.0.1536.824" timestamp="1590272260725" />
-    <state x="529" y="224" key="git4idea.merge.GitPullDialog/107.0.1429.864@107.0.1429.864" timestamp="1589455128011" />
-    <state x="399" y="190" key="run.anything.popup" timestamp="1590268596041">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="529" y="224" key="git4idea.merge.GitPullDialog/107.0.1429.864@107.0.1429.864" timestamp="1592676155560" />
+    <state x="478" y="199" key="run.anything.popup" timestamp="1592627749754">
+      <screen x="107" y="0" width="1429" height="864" />
     </state>
     <state x="399" y="190" key="run.anything.popup/0.0.1536.824/1920.0.1024.728@0.0.1536.824" timestamp="1590268596041" />
-    <state x="478" y="199" key="run.anything.popup/107.0.1429.864@107.0.1429.864" timestamp="1589464058477" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1590185570773">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="478" y="199" key="run.anything.popup/107.0.1429.864@107.0.1429.864" timestamp="1592627749754" />
+    <state x="508" y="152" width="672" height="711" key="search.everywhere.popup" timestamp="1592638149031">
+      <screen x="107" y="0" width="1429" height="864" />
     </state>
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/1920.0.1024.728@0.0.1536.824" timestamp="1590185570773" />
+    <state x="508" y="152" width="672" height="711" key="search.everywhere.popup/107.0.1429.864@107.0.1429.864" timestamp="1592638149031" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/client/src/components/product/singleProductCard.js</url>
+          <line>6</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
