@@ -170,7 +170,7 @@ class singleProduct extends Component {
                                 <div className="col-md-8">
                                     <div className="row">
                                         <div className="col-md-6">
-                                            <img src={`http://localhost:5000/uploads/${this.state.product.productImage}`} className="img-fluid" alt="Responsive image" style={{maxWidth: "75%" }}/>
+                                            <img src={ require("../../../assets/uploads/" + this.state.product.productImage)} className="img-fluid" alt="Responsive image" style={{maxWidth: "75%" }}/>
                                         </div>
                                         <div className="col-md-6">
 

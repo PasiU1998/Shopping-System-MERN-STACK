@@ -21,6 +21,7 @@ class AllProductsClient extends Component{
             isLoaded: false,
             category:[],
             products: [],
+            itemList : []
         };
     }
 
@@ -63,6 +64,8 @@ class AllProductsClient extends Component{
                 });
             });
 
+
+
     }
 
     priductViewByCategoryId = (id) =>{
@@ -76,7 +79,7 @@ class AllProductsClient extends Component{
                         products: res.data
                     });
                 }
-                console.log(res.data);
+
             })
             .catch(err =>{
                 this.setState({
@@ -92,6 +95,7 @@ class AllProductsClient extends Component{
 
     render() {
 
+        console.log(this.state.itemList)
     const items = [
             {
                 label: 'Category',
@@ -102,8 +106,10 @@ class AllProductsClient extends Component{
                         {label: 'Children', icon: 'pi pi-list'},
                         this.state.category.map((value, index1) => {
                             return (
-
-                                {label: value.title, icon: 'pi pi-list'}
+                                {
+                                    label: value.title,
+                                    icon: 'pi pi-list'
+                                }
                             )
 
                          })
@@ -111,7 +117,7 @@ class AllProductsClient extends Component{
                 ]
             }
     ]
-        console.log(items)
+
         return (
             <>
                 <LandingNavbar
@@ -127,7 +133,7 @@ class AllProductsClient extends Component{
                     <div className="container-fluid mt-5 pt-5" style={{backgroundColor:"#f0f0f0", minHeight:"80vh"}}>
                         <div className="float-left ml--2 mt-3" >
                             <Menu  model = {items} style={{minHeight : "80vh"}} />
-                            {console.log(items)}
+
                         </div>
                         <div className="row mt-3">
 

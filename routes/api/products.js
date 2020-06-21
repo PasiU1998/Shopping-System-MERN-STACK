@@ -9,7 +9,7 @@ const productController = require("../../controllers/productController");
 
 //Set Storage
 const storage = multer.diskStorage({
-    destination : 'client/public/uploads',
+    destination : 'client/src/assets/uploads',
     filename : function (req , file , cb) {
         cb(null , file.fieldname + '-' + Date.now() + path.extname(file.originalname));
     }

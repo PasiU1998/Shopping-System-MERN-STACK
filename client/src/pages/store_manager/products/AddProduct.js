@@ -39,7 +39,17 @@ class AddProduct extends Component{
             productColor : "",
             productAvailableSize: "",
             productImg : null,
-            categoryId : ""
+            categoryId : "",
+
+            addproductName : "" ,
+            addproductDescription :"",
+            addproductPrice : "",
+            addproductStockQuantity : "",
+            addproductDiscount : "",
+            addproductColor : "",
+            addproductAvailableSize: "",
+            addproductImg : null
+
 
         };
 
@@ -94,14 +104,14 @@ class AddProduct extends Component{
 
         const formData = new FormData();
 
-        formData.append('productName', this.state.productName);
-        formData.append('productDescription', this.state.productDescription);
-        formData.append('productPrice', this.state.productPrice);
-        formData.append('productStockQuantity', this.state.productStockQuantity);
-        formData.append('productDiscount', this.state.productDiscount);
-        formData.append('productColor', this.state.productColor);
-        formData.append('productAvailableSize', this.state.productAvailableSize);
-        formData.append('productImg', this.state.productImg);
+        formData.append('productName', this.state.addproductName);
+        formData.append('productDescription', this.state.addproductDescription);
+        formData.append('productPrice', this.state.addproductPrice);
+        formData.append('productStockQuantity', this.state.addproductStockQuantity);
+        formData.append('productDiscount', this.state.addproductDiscount);
+        formData.append('productColor', this.state.addproductColor);
+        formData.append('productAvailableSize', this.state.addproductAvailableSize);
+        formData.append('productImg', this.state.addproductImg);
         formData.append('category_id', this.state.categoryId);
         formData.append('user_id', this.props.auth.user.id);
 
@@ -114,6 +124,22 @@ class AddProduct extends Component{
         axios
             .post("/api/products/insert", formData , config)
             .then(res => {
+
+                this.setState({
+                    addproductName : "" ,
+                    addproductDescription :"",
+                    addproductPrice : "",
+                    addproductStockQuantity : "",
+                    addproductDiscount : "",
+                    addproductColor : "",
+                    addproductAvailableSize: "",
+                    addproductImg : null,
+                    products: [
+                        ...this.state.products,
+                        res.data
+                    ]
+
+                })
 
                 this.setState({
                     products: [
@@ -173,8 +199,8 @@ render() {
                                 </InputGroupAddon>
                                 <Input placeholder="Product Name"
                                        onChange={this.onChange}
-                                       value={this.state.productName}
-                                       id="productName"
+                                       value={this.state.addproductName}
+                                       id="addproductName"
                                        type="text"
                                 />
 
@@ -192,8 +218,8 @@ render() {
                                 </InputGroupAddon>
                                 <Input placeholder="Description of Product"
                                        onChange={this.onChange}
-                                       value={this.state.productDescription}
-                                       id="productDescription"
+                                       value={this.state.addproductDescription}
+                                       id="addproductDescription"
                                        type="text"
                                 />
 
@@ -210,8 +236,8 @@ render() {
                                     </InputGroupAddon>
                                     <Input placeholder="Unit Price"
                                            onChange={this.onChange}
-                                           value={this.state.productPrice}
-                                           id="productPrice"
+                                           value={this.state.addproductPrice}
+                                           id="addproductPrice"
                                            type="number"
                                     />
 
@@ -228,8 +254,8 @@ render() {
                                         </InputGroupAddon>
                                         <Input placeholder="Stock Quantity"
                                                onChange={this.onChange}
-                                               value={this.state.productStockQuantity}
-                                               id="productStockQuantity"
+                                               value={this.state.addproductStockQuantity}
+                                               id="addproductStockQuantity"
                                                type="number"
                                         />
 
@@ -246,8 +272,8 @@ render() {
                                             </InputGroupAddon>
                                             <Input placeholder="Discount"
                                                    onChange={this.onChange}
-                                                   value={this.state.productDiscount}
-                                                   id="productDiscount"
+                                                   value={this.state.addproductDiscount}
+                                                   id="addproductDiscount"
                                                    type="number"
                                             />
 
@@ -264,8 +290,8 @@ render() {
                                                 </InputGroupAddon>
                                                 <Input placeholder="Available Colors"
                                                        onChange={this.onChange}
-                                                       value={this.state.productColor}
-                                                       id="productColor"
+                                                       value={this.state.addproductColor}
+                                                       id="addproductColor"
                                                        type="text"
                                                 />
 
@@ -282,8 +308,8 @@ render() {
                                                 </InputGroupAddon>
                                                 <Input placeholder="Available SIZE"
                                                        onChange={this.onChange}
-                                                       value={this.state.productAvailableSize}
-                                                       id="productAvailableSize"
+                                                       value={this.state.addproductAvailableSize}
+                                                       id="addproductAvailableSize"
                                                        type="text"
                                                 />
 
@@ -310,7 +336,7 @@ render() {
                         <FormGroup className="mb-3">
                             <div className="custom-file">
                                 <label className="mb-5" htmlFor="productImg">Upload Image</label>
-                                <input id="productImg" type="file" className="form-control-file" name="file" accept="image/*" files={this.state.productImg} onChange= {this.onChange} />
+                                <input id="addproductImg" type="file" className="form-control-file" name="file" accept="image/*" files={this.state.addproductImg} onChange= {this.onChange} />
 
                             </div>
                          </FormGroup>
